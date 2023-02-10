@@ -20,7 +20,7 @@ footer {
 #root {
   width: 375px;
   height: 750px;
-  background: #3d404b;
+  background: #2e2e36;
   border-radius: 30px;
   box-shadow: 10px 10px 30px rgb(174, 174, 192, 0.5);
   margin: 60px auto;
@@ -48,7 +48,7 @@ footer {
   background-color: #f0f0f0;
 }
 .loginbtn {
-  background-color: #3296d4;
+  background-color: #2f6cf6;
   color: #fff;
   margin-top: 10px;
   cursor: pointer;
@@ -58,7 +58,7 @@ footer {
   border-radius: 5px;
 }
 .loginbtn:hover {
-  background-color: #226792;
+  background-color: #2759ce;
   transition: all 0.3s;
 }
 .create {
@@ -70,7 +70,7 @@ footer {
   margin-bottom: 130px;
 }
 .create:hover {
-  color: #3296d4;
+  color: #2f6cf6;
   transition: all 0.3s;
 }
 .authError {
@@ -115,9 +115,60 @@ footer {
 }
 .moment .printMoment {
   display: inline-block;
-  margin-left: 90px;
+  margin-left: 100px;
   color: #fff;
   font-weight: lighter;
+}
+.budget {
+  width: 100%;
+  height: auto;
+  margin-top: 110px;
+}
+.name {
+  color: rgb(237, 237, 237);
+  margin-bottom: 7px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+.money {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.money2 {
+  color: #fff;
+  margin-top: -5px;
+  font-size: 20px;
+  margin-bottom: 100px;
+}
+.moneyInput {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 295px;
+  background-color: transparent;
+  border-bottom: 1px solid #fff;
+  border-left: medium none;
+  border-right: medium none;
+  border-top: medium none;
+  color: #fff;
+  font-size: 20px;
+}
+.moneyInput:focus {
+  outline: none;
+}
+.budgetBtn {
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  background-color: #2f6cf6;
+  color: #fff;
+  cursor: pointer;
+}
+.budgetBtn:hover {
+  background-color: #2759ce;
+  transition: all 0.3s;
 }
 /*
 .goHome {

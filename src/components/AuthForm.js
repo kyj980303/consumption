@@ -78,7 +78,7 @@ const AuthForm = () => {
         <input
           type="submit"
           className="loginbtn"
-          value={newAccount ? "Create Account" : "LogIn"}
+          value={newAccount ? "LogIn" : "Create Account"}
           required
         />
         <div className="socialLogin">

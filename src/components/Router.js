@@ -4,6 +4,7 @@ import Auth from "routes/Auth";
 import Home from "routes/Home";
 import Recode from "routes/Recode";
 import Calender from "components/Calender";
+import RecodeForm from "components/RecodeForm";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
@@ -17,6 +18,9 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
             </Route>
             <Route exact path="/recode">
               <Recode userObj={userObj} refreshUser={refreshUser} />
+            </Route>
+            <Route exact path="/recodeForm">
+              <RecodeForm />
             </Route>
           </>
         ) : (

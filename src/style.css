@@ -170,9 +170,37 @@ footer {
   background-color: #2759ce;
   transition: all 0.3s;
 }
+.myBudgets {
+  width: 47%;
+  height: auto;
+  background-color: #3d3d49;
+  margin-top: 30px;
+  padding: 10px;
+  border-radius: 10px;
+  float: left;
+}
+.myBudgets2 {
+  margin-right: 5%;
+  width: 47%;
+  height: auto;
+  background-color: #3d3d49;
+  margin-top: 30px;
+  padding: 10px;
+  float: left;
+  border-radius: 10px;
+}
+.myBudget {
+  color: #fff;
+  text-align: center;
+}
+.myBudget:nth-of-type(1) {
+  margin-bottom: 8px;
+  margin-top: 3px;
+}
+
 /*
 .goHome {
-  width: 25%;
+  width: 25%; 
   height: auto;
 }
 .goProfile {

@@ -28,7 +28,15 @@ const Home = ({ userObj, refreshUser }) => {
 
     await dbService.collection("budget").add(budgetObj);
     setBudget("");
-    history.push("/recode");
+    history.push({
+      pathname: "/recode",
+      state: {
+        budget: budget,
+        createdAt: nowDate,
+        userId: userObj.uid,
+        userName: userObj.displayName,
+      },
+    });
     console.log(budgetObj);
   };
 

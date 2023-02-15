@@ -10,8 +10,8 @@ const SetRecode = ({ userObj, createId, key }) => {
   useEffect(() => {
     async function fetchData() {
       const recodes = await dbService.collection("recode").get();
-      let a = recodes.docs.map((doc) => doc.data());
-      setRecodes(a);
+      let recodesData = recodes.docs.map((doc) => doc.data());
+      setRecodes(recodesData);
     }
     fetchData();
   }, []);
@@ -22,12 +22,14 @@ const SetRecode = ({ userObj, createId, key }) => {
   const recodeList = recodes.map((recode) => (
     <div className="recodeList">
       {recode.createId === userObj.uid && (
-        <div key={key}>
-          {recode.selectDay} {recode.contents} {recode.money}
+        <div key={key} className="list">
+          <span>{recode.selectDay}</span>
+          <span>{recode.contents}</span>
+          <span>{recode.money}원</span>
         </div>
       )}
     </div>
   ));
-  return <div>{recodeList}</div>;
+  return <div className="recodes">{recodeList}</div>;
 };
 export default SetRecode;

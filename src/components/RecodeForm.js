@@ -34,7 +34,9 @@ const RecodeForm = () => {
   // 선택된 날
   let selectDay =
     String(year) +
+    "." +
     addZero(String(month).slice(-2)) +
+    "." +
     addZero(String(day).slice(-2));
 
   const onSubmit = async (event) => {

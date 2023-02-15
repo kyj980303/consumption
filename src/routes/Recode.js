@@ -1,15 +1,25 @@
+import SetRecode from "components/SetRecode";
 import React from "react";
-import { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
 const Recode = ({ userObj }) => {
-  const location = useLocation();
   const history = useHistory();
+  const location = useLocation();
 
   let budget = location.state.budget;
+  let createId = location.state.createId;
+  let key = location.state.key;
+  // console.log("createId::::::::" + createId);
+  // console.log("로그인한 사람 아이디 " + userObj.uid);
 
   const onClick = () => {
-    history.push("/recodeForm");
+    history.push({
+      pathname: "/recodeForm",
+      state: {
+        budget: budget,
+        userObj: userObj.uid,
+      },
+    });
   };
   return (
     <>
@@ -34,6 +44,7 @@ const Recode = ({ userObj }) => {
 
         <div className="bar"></div>
       </div>
+      <SetRecode userObj={userObj} createId={createId} key={key} />
     </>
   );
 };

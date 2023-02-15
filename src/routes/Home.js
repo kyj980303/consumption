@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import moment from "moment";
 import { dbService } from "fbase";
 import { useHistory } from "react-router-dom";
-import Recode from "./Recode";
 
 const Home = ({ userObj, refreshUser }) => {
   const [budget, setBudget] = useState(""); // 예산
@@ -32,9 +31,6 @@ const Home = ({ userObj, refreshUser }) => {
       pathname: "/recode",
       state: {
         budget: budget,
-        createdAt: nowDate,
-        userId: userObj.uid,
-        userName: userObj.displayName,
       },
     });
     console.log(budgetObj);

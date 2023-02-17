@@ -3,7 +3,7 @@ import moment from "moment";
 import { dbService } from "fbase";
 import { useHistory } from "react-router-dom";
 
-const Home = ({ userObj, refreshUser }) => {
+const Home = ({ userObj }) => {
   const [budget, setBudget] = useState(""); // 예산
 
   const onChange = (event) => {

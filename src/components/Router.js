@@ -5,6 +5,7 @@ import Home from "routes/Home";
 import Recode from "routes/Recode";
 import Calender from "components/Calender";
 import RecodeForm from "components/RecodeForm";
+import Detail from "components/Detail";
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
   return (
@@ -21,6 +22,9 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
             </Route>
             <Route exact path="/recodeForm">
               <RecodeForm />
+            </Route>
+            <Route exact path="/detail">
+              <Detail />
             </Route>
           </>
         ) : (

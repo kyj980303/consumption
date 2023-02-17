@@ -7,10 +7,7 @@ const Recode = ({ userObj }) => {
   const location = useLocation();
 
   let budget = location.state.budget;
-  let createId = location.state.createId;
-  let key = location.state.key;
-  // console.log("createId::::::::" + createId);
-  // console.log("로그인한 사람 아이디 " + userObj.uid);
+  let key = Math.random();
 
   const onClick = () => {
     history.push({
@@ -18,6 +15,7 @@ const Recode = ({ userObj }) => {
       state: {
         budget: budget,
         userObj: userObj.uid,
+        key: key,
       },
     });
   };
@@ -44,7 +42,7 @@ const Recode = ({ userObj }) => {
 
         <div className="bar"></div>
       </div>
-      <SetRecode userObj={userObj} createId={createId} key={key} />
+      <SetRecode userObj={userObj} budget={budget} />
     </>
   );
 };

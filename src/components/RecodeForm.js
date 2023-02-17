@@ -1,8 +1,8 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { ko } from "date-fns/esm/locale";
+import { useState } from "react";
 import { dbService } from "\bfbase";
 import { useHistory, useLocation } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const RecodeForm = () => {
 
   // recodeObj에 작성자를 등록하기 위함
   let createId = location.state.userObj;
-  // console.log("createId=========================" + createId);
+  let key = location.state.key;
 
   // 선택한 년/월/일
   let year = startDate.getFullYear();
@@ -43,7 +43,6 @@ const RecodeForm = () => {
     event.preventDefault();
 
     // 기록하기로 지출내역 등록하면 저장될 객체
-    let key = Math.random();
     const recodeObj = {
       money: money,
       contents: contents,
@@ -62,11 +61,6 @@ const RecodeForm = () => {
       pathname: "/recode",
       state: {
         budget: budget,
-        money: money,
-        contents: contents,
-        selectDay: selectDay,
-        createId: createId,
-        key: key,
       },
     });
   };
@@ -84,6 +78,7 @@ const RecodeForm = () => {
     } = event;
     setContents(value);
   };
+
   return (
     <>
       <form onSubmit={onSubmit} className="recodeForm">

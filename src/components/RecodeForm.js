@@ -97,6 +97,7 @@ const RecodeForm = () => {
           placeholder="사용한 금액"
           value={money}
           onChange={onChange}
+          required
         />
         <p>사용 내역을 입력해주세요 .</p>
         <textarea
@@ -104,6 +105,7 @@ const RecodeForm = () => {
           placeholder="사용 내역"
           value={contents}
           onChange={onChangeContenst}
+          required
         ></textarea>
         <button className="budgetBtn">등록하기</button>
       </form>

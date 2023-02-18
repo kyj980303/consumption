@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const List = ({ recodeObj, userObj, budget }) => {
   let history = useHistory();
-  console.log(budget);
+
   const onClick = (event) => {
     event.preventDefault();
     let div = event.target.parentElement;

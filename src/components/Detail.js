@@ -46,9 +46,24 @@ const Detail = () => {
     setNewContents(value);
   };
 
+  const onClick = async () => {
+    const ok = window.confirm("정말 삭제하시겠습니까?");
+    if (ok) {
+      await dbService.doc(`recode/${recodeObj.id}`).delete();
+      let budget = location.state.budget;
+
+      history.push({
+        pathname: "/recode",
+        state: {
+          budget: budget,
+        },
+      });
+    }
+  };
+
   return (
     <>
-      <form className="recodeForm " onSubmit={onSubmit}>
+      <form className="recodeForm" onSubmit={onSubmit}>
         <p>날짜를 선택해주세요 .</p>
         <DatePicker
           className="dateInput"
@@ -72,8 +87,9 @@ const Detail = () => {
             onChange={onChangeContents}
           />
         </div>
-        <button className="budgetBtn" type="submit">
-          수정하기
+        <button className="updateDeleteBtn">수정하기</button>
+        <button className="updateDeleteBtn" onClick={onClick}>
+          삭제하기
         </button>
       </form>
     </>

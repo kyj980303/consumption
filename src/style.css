@@ -157,6 +157,27 @@ footer {
 .moneyInput:focus {
   outline: none;
 }
+.updateDeleteBtn {
+  border: none;
+  border-radius: 10px;
+  width: 48%;
+  height: 40px;
+  padding: 10px;
+  background-color: #2f6cf6;
+  color: #fff;
+  cursor: pointer;
+}
+.updateDeleteBtn:hover {
+  background-color: #2759ce;
+  transition: all 0.3s;
+}
+.updateDeleteBtn:nth-of-type(2) {
+  float: right;
+  background-color: #717377;
+}
+.updateDeleteBtn:nth-of-type(2):hover {
+  background-color: #606368;
+}
 .budgetBtn {
   border: none;
   border-radius: 10px;

@@ -7,7 +7,7 @@ import Calender from "components/Calender";
 import RecodeForm from "components/RecodeForm";
 import Detail from "components/Detail";
 
-const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
+const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
       {isLoggedIn && <Calender />}
@@ -15,10 +15,10 @@ const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
         {isLoggedIn ? (
           <>
             <Route exact path="/">
-              <Home userObj={userObj} refreshUser={refreshUser} />
+              <Home userObj={userObj} />
             </Route>
             <Route exact path="/recode">
-              <Recode userObj={userObj} refreshUser={refreshUser} />
+              <Recode userObj={userObj} />
             </Route>
             <Route exact path="/recodeForm">
               <RecodeForm />

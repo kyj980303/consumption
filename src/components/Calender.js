@@ -4,7 +4,6 @@ import React, { useState } from "react";
 const Calender = () => {
   const [getMoment, setMoment] = useState(moment());
   const today = getMoment;
-
   return (
     <div className="moment">
       <button
@@ -15,7 +14,9 @@ const Calender = () => {
       >
         ◀︎
       </button>
-      <span className="printMoment">{today.format("YYYY년 MM월")}</span>
+      <span className="printMoment" id={Number(today.format("MM"))}>
+        {today.format("YYYY년 MM월")}
+      </span>
       <button
         className="next"
         onClick={() => {

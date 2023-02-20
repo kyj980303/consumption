@@ -18,15 +18,28 @@ const Recode = ({ userObj }) => {
     fetchData();
   }, []);
 
+  let moment = location.state.moment;
   // 총 쓴 금액 구하기
   let sum = 0;
   for (let i = 0; i < recodes.length; i++) {
-    sum += Number(recodes[i].money);
+    let monthSplit = recodes[i].selectDay.split(".");
+    let month = Number(monthSplit[1]);
+    if (moment === month) {
+      sum += Number(recodes[i].money);
+    }
   }
 
   // 예산에서 사용한 금액 빼기
   let budget = location.state.budget;
-  let remainder = budget - sum;
+  console.log(budget);
+  let remainder = 0;
+  for (let i = 0; i < recodes.length; i++) {
+    let monthSplit = recodes[i].selectDay.split(".");
+    let month = Number(monthSplit[1]);
+    if (moment === month) {
+      remainder = budget - sum;
+    }
+  }
 
   let key = Math.random();
   const onClick = () => {

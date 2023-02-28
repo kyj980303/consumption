@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 const Calender = () => {
   const [getMoment, setMoment] = useState(moment());
   const today = getMoment;
+  console.log(today);
   const history = useHistory();
 
   const prev = () => {

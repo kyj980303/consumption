@@ -20,21 +20,19 @@ const Recode = ({ userObj }) => {
 
   // 달력에있는 월
   let moment = location.state.moment;
+
   // 현재 월
   let todayMonth = new Date().getMonth() + 1;
   console.log(todayMonth);
   // 총 쓴 금액 구하기
   let sum = 0;
-  for (let i = 0; i < recodes.length; i++) {
-    let monthSplit = recodes[i].selectDay.split(".");
-    // 기록된 월
+  recodes.map((recode) => {
+    let monthSplit = recode.selectDay.split(".");
     let month = Number(monthSplit[1]);
-    if (moment === month || (moment === todayMonth) === month) {
-      sum += Number(recodes[i].money);
-      // console.log(month);
-      // console.log(todayMonth);
+    if (moment === month) {
+      sum += Number(recode.money);
     }
-  }
+  });
 
   // 예산에서 사용한 금액 빼기
   let budget = location.state.budget;
